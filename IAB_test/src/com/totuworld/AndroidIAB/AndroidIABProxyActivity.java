@@ -26,6 +26,9 @@ public class AndroidIABProxyActivity extends Activity
 		try
 		{
 			boolean supportsNative = Build.VERSION.SDK_INT >= 9 /*Build.VERSION_CODES.GINGERBREAD*/;
+            // for IAB
+            supportsNative = false;
+
 			Class<?> activity = Class.forName(classNames[supportsNative ? 1 : 0]);
 			Intent intent = new Intent(this, activity);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
